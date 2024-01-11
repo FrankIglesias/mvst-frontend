@@ -1,6 +1,22 @@
 import { useEffect, useState } from 'react';
 import { useUsers } from '../hooks/useUsers';
 
+/**
+ * Component for searching for a GitHub user
+ * 
+ * @component
+ * @example
+ * const onChange = (user: string) => {
+ *  console.log(user);
+ * }
+ * 
+ * return (
+ * <UserSearch onChange={onChange} />
+ * )
+ * @param {function} onChange - Function to call when a user is selected
+ * @returns {JSX.Element} - Rendered UserSearch component
+ *
+ */
 function UserSearch({ onChange }: { onChange: (user: string) => void }) {
   const { search, data: users, loading } = useUsers();
   const [showDropdown, setShowDropdown] = useState(false);

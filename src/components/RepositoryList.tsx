@@ -2,6 +2,19 @@ import { useEffect, useRef, useState } from 'react';
 import Repository from './Repository';
 import { useRepositories } from '../hooks/useRepositories';
 
+/**
+ * Component for displaying a list of repositories
+ * 
+ * @component
+ * @example
+ * const user = 'FrankIglesias';
+ * return (
+ * <RepositoryList user={user} />
+ * )
+ * @param {string} user - GitHub username
+ * @returns {JSX.Element} - Rendered RepositoryList component
+ * 
+ **/
 export default function RepositoryList({ user }: { user: string }) {
   const ref = useRef(null);
   const [repoName, setRepoName] = useState<string>();
