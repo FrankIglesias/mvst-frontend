@@ -16,7 +16,6 @@
     "@apollo/client": "^3.8.8",
     "@babel/preset-env": "^7.23.7",
     "@babel/preset-react": "^7.23.3",
-    "@testing-library/react-hooks": "^8.0.1",
     "graphql": "^16.8.1",
     "lodash": "^4.17.21",
     "react": "^18.2.0",
