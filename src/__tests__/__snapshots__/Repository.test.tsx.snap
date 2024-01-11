@@ -1,0 +1,20 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Repository > renders without crashing 1`] = `
+<div>
+  <div
+    class="border-solid border-white border-2 mb-2 rounded p-4"
+  >
+    <a
+      href="test"
+    >
+      <h4>
+        test
+      </h4>
+    </a>
+    <p>
+      test
+    </p>
+  </div>
+</div>
+`;

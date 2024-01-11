@@ -13,7 +13,7 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  * Therefore it is highly recommended to use the babel or swc plugin for production.
  */
 const documents = {
-    "\n  query Repositories($userName: String!, $cursor: String) {\n    user(login: $userName) {\n      repositories(first: 10, after: $cursor) {\n        nodes {\n          id\n          name\n          description\n          url\n        }\n        pageInfo {\n          endCursor\n          hasNextPage\n        }\n      }\n    }\n  }\n": types.RepositoriesDocument,
+    "\n  query Repositories($query: String!, $cursor: String) {\n    search(type:REPOSITORY query:$query first: 10, after: $cursor) {\n      repositories: nodes {\n        ... on Repository {\n          name\n          description\n          url\n        }\n      }\n      pageInfo {\n          endCursor\n          hasNextPage\n      }\n    }\n  }\n": types.RepositoriesDocument,
     "\nquery Users($query: String!) {\n  search(type:USER query: $query first: 5) {\n    nodes {\n      ... on User {\n        id\n        login\n        avatarUrl\n      }\n    }\n  }\n}\n": types.UsersDocument,
 };
 
@@ -34,7 +34,7 @@ export function gql(source: string): unknown;
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function gql(source: "\n  query Repositories($userName: String!, $cursor: String) {\n    user(login: $userName) {\n      repositories(first: 10, after: $cursor) {\n        nodes {\n          id\n          name\n          description\n          url\n        }\n        pageInfo {\n          endCursor\n          hasNextPage\n        }\n      }\n    }\n  }\n"): (typeof documents)["\n  query Repositories($userName: String!, $cursor: String) {\n    user(login: $userName) {\n      repositories(first: 10, after: $cursor) {\n        nodes {\n          id\n          name\n          description\n          url\n        }\n        pageInfo {\n          endCursor\n          hasNextPage\n        }\n      }\n    }\n  }\n"];
+export function gql(source: "\n  query Repositories($query: String!, $cursor: String) {\n    search(type:REPOSITORY query:$query first: 10, after: $cursor) {\n      repositories: nodes {\n        ... on Repository {\n          name\n          description\n          url\n        }\n      }\n      pageInfo {\n          endCursor\n          hasNextPage\n      }\n    }\n  }\n"): (typeof documents)["\n  query Repositories($query: String!, $cursor: String) {\n    search(type:REPOSITORY query:$query first: 10, after: $cursor) {\n      repositories: nodes {\n        ... on Repository {\n          name\n          description\n          url\n        }\n      }\n      pageInfo {\n          endCursor\n          hasNextPage\n      }\n    }\n  }\n"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
