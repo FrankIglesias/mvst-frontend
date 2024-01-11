@@ -13,6 +13,7 @@ The project utilizes the following technologies:
 - Deployment & CD: Vercel
 - GraphQL: Apollo Client
 - Testing: React Testing Library & Vitest
+- Storybook
 
 ## How to run
 
@@ -56,7 +57,15 @@ This will run the project inside `http://localhost:5173/`
 npm run test
 ```
 
+
+## Run Storybook
+```sh 
+npm run storybook
+```
+ Will open the storybook server on `http://localhost:6006/`
+
 ## Future improvements
 
 - Test the intersection observer
 - Add search by language
+- Install pre-commit
