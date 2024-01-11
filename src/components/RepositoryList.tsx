@@ -31,8 +31,8 @@ export default function RepositoryList({ user }: { user: string }) {
   ) : (
     <>
       <div>
-        <div className="py-4 flex justify-between">
-          <span>You are seeing {user} repositories</span>
+        <div className="py-4 flex justify-between items-center">
+          <span>{user} repositories</span>
           <input
             type="text"
             placeholder="Search by repo name"
